@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hostellerie de la Sanaga | Hôtel 3 étoiles à Edéa</title>
+<meta name="description" content="Hostellerie de la Sanaga - Hôtel 3 étoiles à Edéa, Cameroun. Chambres, restaurant, piscine et séminaires au bord du fleuve Sanaga.">
+<link rel="icon" href="images/logo-new.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="style.css?v=3">
+</head>
+<body>
+
+<!-- ============ HEADER / NAVIGATION ============ -->
+<header class="site-header" id="siteHeader">
+
+  <div class="container navbar">
+    <a href="index.html" class="logo">
+      <img src="images/logo-new.png" alt="Hostellerie de la Sanaga">
+      <span>HOSTELLERIE <em>de la Sanaga</em></span>
+    </a>
+
+    <nav class="main-nav" id="mainNav">
+      <ul>
+        <li><a href="index.html" class="active">Accueil</a></li>
+        <li><a href="nos-chambres.html">Nos Chambres</a></li>
+        <li><a href="piscine-et-restaurant.html">Piscine &amp; Restaurant</a></li>
+        <li><a href="seminaires.html">Séminaires</a></li>
+        <li><a href="galerie.html">Galerie</a></li>
+        <li><a href="a-propos.html">A propos</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+
+    <!-- Language switcher -->
+    <div class="lang-switcher" id="langSwitcher">
+      <div class="lang-current">
+        <span class="flag">🇫🇷</span> Français <span class="caret">▼</span>
+      </div>
+      <div class="lang-menu">
+        <a href="index.html" class="current"><span class="flag">🇫🇷</span> Français</a>
+        <a href="en/index.html"><span class="flag">🇬🇧</span> English</a>
+      </div>
+    </div>
+
+    <button class="menu-toggle" id="menuToggle" aria-label="Ouvrir le menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- ============ HERO SECTION ============ -->
+<section class="hero" id="hero">
+  <div class="hero-media">
+    <img src="images/hotel-aerial.jpg" alt="Vue aérienne de l'Hostellerie de la Sanaga">
+    <div class="hero-overlay"></div>
+  </div>
+
+  <div class="container hero-content">
+    <p class="hero-kicker">Bienvenue à</p>
+    <h1>Hostellerie de la Sanaga</h1>
+    <p class="hero-subtitle">Un hôtel 3 étoiles au bord du fleuve Sanaga, à Edéa</p>
+
+    <!-- Booking availability widget -->
+    <div class="booking-widget">
+      <div class="booking-field">
+        <label for="checkin">Arrivée</label>
+        <input type="date" id="checkin" name="checkin">
+      </div>
+      <div class="booking-field">
+        <label for="checkout">Départ</label>
+        <input type="date" id="checkout" name="checkout">
+      </div>
+      <div class="booking-field">
+        <label for="adults">Adultes</label>
+        <select id="adults" name="adults">
+          <option>1</option><option selected>2</option><option>3</option><option>4</option>
+        </select>
+      </div>
+      <div class="booking-field">
+        <label for="children">Enfants</label>
+        <select id="children" name="children">
+          <option selected>0</option><option>1</option><option>2</option><option>3</option>
+        </select>
+      </div>
+      <button type="button" class="btn btn-primary" id="checkAvailability">Vérifier la disponibilité</button>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SERVICES / ATOUTS SECTION ============ -->
+<section class="services" id="services">
+  <div class="container">
+    <p class="section-kicker">Services Extra</p>
+    <h2 class="section-title">Nos meilleurs atouts</h2>
+
+    <div class="services-grid">
+      <div class="service-card reveal-up">
+        <div class="service-icon"><i class="fa-solid fa-bell-concierge"></i></div>
+        <h3>Restaurant</h3>
+        <p>Une cuisine qui met à l'honneur les saveurs et l'art culinaire africain, servie dans un cadre chaleureux.</p>
+      </div>
+      <div class="service-card reveal-up">
+        <div class="service-icon"><img src="images/icon-pool.png" alt="Icône piscine"></div>
+        <h3>Piscine</h3>
+        <p>Un espace piscine calme et accueillant, idéal pour se détendre après une journée de visite ou de travail.</p>
+      </div>
+      <div class="service-card reveal-up">
+        <div class="service-icon"><i class="fa-solid fa-wifi"></i></div>
+        <h3>Wifi</h3>
+        <p>Une connexion internet fiable et rapide, disponible dans l'ensemble de l'établissement.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ROOMS & APARTMENTS SECTION ============ -->
+<section class="rooms" id="chambres">
+  <div class="container">
+    <p class="section-kicker">Hébergement</p>
+    <h2 class="section-title">Chambres &amp; Appartements</h2>
+
+    <div class="rooms-grid">
+      <!-- Room: Appartement Junior -->
+      <article class="room-card reveal-up">
+        <div class="room-image">
+          <img src="images/suite-cover.jpg" alt="Suite Junior">
+        </div>
+        <div class="room-body">
+          <h3>Suite Junior</h3>
+          <p class="room-size">Avec un petit déjeuner buffet</p>
+          <p class="room-price"><strong>67 000</strong> FCFA TTC / nuitée</p>
+          <a href="nos-chambres.html" class="btn btn-outline">Voir la chambre</a>
+        </div>
+      </article>
+
+      <!-- Room: Luxe Spéciale -->
+      <article class="room-card reveal-up">
+        <div class="room-image">
+          <img src="images/luxe-special-cover.png" alt="Luxe Spéciale">
+        </div>
+        <div class="room-body">
+          <h3>Luxe Spéciale</h3>
+          <p class="room-size">Avec un petit déjeuner buffet</p>
+          <p class="room-price"><strong>57 000</strong> FCFA TTC / nuitée</p>
+          <a href="nos-chambres.html" class="btn btn-outline">Voir la chambre</a>
+        </div>
+      </article>
+
+      <!-- Room: Chambre Luxe -->
+      <article class="room-card reveal-up">
+        <div class="room-image">
+          <img src="images/luxe-cover.png" alt="Chambre Luxe">
+        </div>
+        <div class="room-body">
+          <h3>Chambre Luxe</h3>
+          <p class="room-size">Avec un petit déjeuner buffet</p>
+          <p class="room-price"><strong>42 000</strong> FCFA TTC / nuitée</p>
+          <a href="nos-chambres.html" class="btn btn-outline">Voir la chambre</a>
+        </div>
+      </article>
+
+      <!-- Room: Chambre Standard -->
+      <article class="room-card reveal-up">
+        <div class="room-image">
+          <img src="images/standard-cover.png" alt="Chambre Standard">
+        </div>
+        <div class="room-body">
+          <h3>Chambre Standard</h3>
+          <p class="room-size">Sans petit déjeuner</p>
+          <p class="room-price"><strong>29 000</strong> FCFA TTC / nuitée</p>
+          <a href="nos-chambres.html" class="btn btn-outline">Voir la chambre</a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ABOUT / QUI SOMMES-NOUS SECTION ============ -->
+<section class="about" id="apropos">
+  <div class="container about-grid">
+    <div class="about-media reveal-left">
+      <img src="images/hotel-aerial.jpg" alt="L'Hostellerie de la Sanaga vue du ciel">
+    </div>
+    <div class="about-content reveal-right">
+      <p class="section-kicker">Qui sommes-nous ?</p>
+      <h2 class="section-title">Hôtel 3 étoiles à Edéa</h2>
+      <p>
+        Située à Edéa, au bord du fleuve Sanaga, notre hostellerie profite d'un emplacement stratégique :
+        à environ 60 km de Douala, capitale économique, 187 km de Yaoundé, capitale politique, et 115 km
+        de Kribi, station balnéaire prisée. Un cadre sécurisé et paisible, pensé pour l'accueil des
+        voyageurs d'affaires comme des touristes.
+      </p>
+      <p>
+        L'établissement est une société camerounaise, filiale du groupe Alucam, spécialisée dans
+        l'hôtellerie et la restauration.
+      </p>
+      <a href="a-propos.html" class="btn btn-primary">En savoir plus</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SEMINARS SECTION ============ -->
+<section class="seminars" id="seminaires">
+  <div class="container seminars-grid">
+    <div class="seminars-content reveal-left">
+      <p class="section-kicker">Espace évènementiel</p>
+      <h2 class="section-title">Séminaires &amp; réunions</h2>
+      <p>
+        Nos salles modulables accueillent séminaires, réunions d'entreprise et évènements privés,
+        avec un service dédié et le matériel nécessaire pour vos rencontres professionnelles.
+      </p>
+      <a href="seminaires.html" class="btn btn-outline">Demander un devis</a>
+    </div>
+    <div class="seminars-media reveal-right">
+      <img src="images/seminar-1.png" alt="Salle de séminaire">
+    </div>
+  </div>
+</section>
+
+<!-- ============ TESTIMONIALS SECTION ============ -->
+<section class="testimonials" id="temoignages">
+  <div class="container testimonials-grid">
+    <div class="testimonials-content">
+      <p class="section-kicker">Témoignages</p>
+      <h2 class="section-title">Avis de nos clients</h2>
+
+      <div class="testimonial-card reveal-left">
+        <img src="images/testimonial-sarah.jpg" alt="Photo de Sarah" class="testimonial-avatar">
+        <img src="images/icon-5-stars.png" alt="5 étoiles" class="testimonial-stars">
+        <p class="testimonial-text">
+          « Hôtel très propre et calme, avec un personnel disponible et serviable. Un excellent
+          rapport qualité-prix pour un séjour à Edéa. »
+        </p>
+        <p class="testimonial-author">Sarah — Mai 2023</p>
+      </div>
+    </div>
+    <div class="testimonials-media reveal-right">
+      <img src="images/hotel-aerial.jpg" alt="Hostellerie de la Sanaga">
+    </div>
+  </div>
+</section>
+
+<!-- ============ GALLERY PREVIEW SECTION ============ -->
+<section class="gallery" id="galerie">
+  <div class="container">
+    <p class="section-kicker">Galerie</p>
+    <h2 class="section-title">Découvrez notre établissement</h2>
+  </div>
+  <div class="gallery-banner reveal-up">
+    <img src="images/hotel-aerial.jpg" alt="Vue panoramique de l'hôtel et du fleuve Sanaga">
+  </div>
+</section>
+
+<!-- ============ FAQ SECTION ============ -->
+<section class="faq" id="faq">
+  <div class="container">
+    <p class="section-kicker">Besoin d'aide ?</p>
+    <h2 class="section-title">Questions fréquentes</h2>
+
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-question">Quels sont les horaires d'arrivée et de départ ? <span>+</span></button>
+        <div class="faq-answer"><p>L'arrivée (check-in) se fait à partir de 12h00 et le départ (check-out) avant 12h00. Un arrangement peut être demandé selon disponibilité.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">Le petit-déjeuner est-il inclus ? <span>+</span></button>
+        <div class="faq-answer"><p>Le petit-déjeuner peut être ajouté à votre réservation. Contactez notre équipe pour connaître les formules disponibles.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">Proposez-vous un service de navette ? <span>+</span></button>
+        <div class="faq-answer"><p>Un service de transfert peut être organisé sur demande depuis Douala, Yaoundé ou Kribi. Merci de nous contacter à l'avance.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT / CALL-TO-ACTION SECTION ============ -->
+<section class="cta-contact" id="contact">
+  <div class="container cta-inner">
+    <h2>Réservez votre séjour à l'Hostellerie de la Sanaga</h2>
+    <p>Notre équipe est à votre disposition 7 jours sur 7.</p>
+    <div class="cta-buttons">
+      <a href="tel:+237243210931" class="btn btn-light">Appeler : +237 243 21 09 31</a>
+      <a href="https://wa.me/237699801830" target="_blank" rel="noopener" class="btn btn-light"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+      <a href="mailto:hostelleriedelasanaga@ymail.com" class="btn btn-outline-light">Envoyer un e-mail</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-col">
+      <img src="images/logo-new.png" alt="Hostellerie de la Sanaga" class="footer-logo">
+      <p>Hôtel 3 étoiles à Edéa, au bord du fleuve Sanaga. Filiale du groupe Alucam.</p>
+    </div>
+
+    <div class="footer-col">
+      <h4>Navigation</h4>
+      <ul>
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="nos-chambres.html">Nos Chambres</a></li>
+        <li><a href="piscine-et-restaurant.html">Piscine &amp; Restaurant</a></li>
+        <li><a href="seminaires.html">Séminaires</a></li>
+        <li><a href="galerie.html">Galerie</a></li>
+        <li><a href="a-propos.html">A propos</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="tel:+237243210931">+237 243 21 09 31</a></li>
+        <li><a href="tel:+237699801830">+237 699 80 18 30</a></li>
+        <li><a href="mailto:hostelleriedelasanaga@ymail.com">hostelleriedelasanaga@ymail.com</a></li>
+        <li>Edéa, Cameroun</li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Suivez-nous</h4>
+            <div class="footer-social">
+        <a href="https://www.facebook.com/hoteldelasanaga237" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/hostelleriedelasanaga237/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://wa.me/237699801830" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+        <a href="https://www.tiktok.com/@hostelleriedelasanaga?lang=fr" target="_blank" rel="noopener" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <div class="container">
+      <p>&copy; <span id="year"></span> Hostellerie de la Sanaga. Tous droits réservés.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- Back to top button -->
+<button id="backToTop" aria-label="Retour en haut">↑</button>
+
+<script src="script.js?v=3"></script>
+</body>
+</html>
