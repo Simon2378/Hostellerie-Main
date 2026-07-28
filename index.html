@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+?<!DOCTYPE html>
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-<link rel="stylesheet" href="style.css?v=3">
+<link rel="stylesheet" href="style.css?v=9">
 </head>
 <body>
 
@@ -55,7 +55,10 @@
 <!-- ============ HERO SECTION ============ -->
 <section class="hero" id="hero">
   <div class="hero-media">
-    <img src="images/hotel-aerial.jpg" alt="Vue aérienne de l'Hostellerie de la Sanaga">
+    <img src="images/hotel-aerial.jpg" alt="Vue aérienne de l'Hostellerie de la Sanaga" class="hero-slide active">
+    <img src="images/luxe-special-cover.png" alt="Chambre Luxe Spéciale" class="hero-slide">
+    <img src="images/restaurant-dining.png" alt="Restaurant de l'Hostellerie de la Sanaga" class="hero-slide">
+    <img src="images/hotel-aerial-2.png" alt="Vue aérienne de l'Hostellerie de la Sanaga" class="hero-slide">
     <div class="hero-overlay"></div>
   </div>
 
@@ -63,8 +66,12 @@
     <p class="hero-kicker">Bienvenue à</p>
     <h1>Hostellerie de la Sanaga</h1>
     <p class="hero-subtitle">Un hôtel 3 étoiles au bord du fleuve Sanaga, à Edéa</p>
+  </div>
+</section>
 
-    <!-- Booking availability widget -->
+<!-- ============ BOOKING WIDGET SECTION ============ -->
+<section class="booking-section">
+  <div class="container">
     <div class="booking-widget">
       <div class="booking-field">
         <label for="checkin">Arrivée</label>
@@ -133,7 +140,7 @@
           <h3>Suite Junior</h3>
           <p class="room-size">Avec un petit déjeuner buffet</p>
           <p class="room-price"><strong>67 000</strong> FCFA TTC / nuitée</p>
-          <a href="nos-chambres.html" class="btn btn-outline">Voir la chambre</a>
+          <a href="room-suite-junior.html" class="btn btn-outline">Voir la chambre</a>
         </div>
       </article>
 
@@ -146,7 +153,7 @@
           <h3>Luxe Spéciale</h3>
           <p class="room-size">Avec un petit déjeuner buffet</p>
           <p class="room-price"><strong>57 000</strong> FCFA TTC / nuitée</p>
-          <a href="nos-chambres.html" class="btn btn-outline">Voir la chambre</a>
+          <a href="room-luxe-speciale.html" class="btn btn-outline">Voir la chambre</a>
         </div>
       </article>
 
@@ -159,7 +166,7 @@
           <h3>Chambre Luxe</h3>
           <p class="room-size">Avec un petit déjeuner buffet</p>
           <p class="room-price"><strong>42 000</strong> FCFA TTC / nuitée</p>
-          <a href="nos-chambres.html" class="btn btn-outline">Voir la chambre</a>
+          <a href="room-chambre-luxe.html" class="btn btn-outline">Voir la chambre</a>
         </div>
       </article>
 
@@ -172,7 +179,7 @@
           <h3>Chambre Standard</h3>
           <p class="room-size">Sans petit déjeuner</p>
           <p class="room-price"><strong>29 000</strong> FCFA TTC / nuitée</p>
-          <a href="nos-chambres.html" class="btn btn-outline">Voir la chambre</a>
+          <a href="room-chambre-standard.html" class="btn btn-outline">Voir la chambre</a>
         </div>
       </article>
     </div>
@@ -285,8 +292,8 @@
     <p>Notre équipe est à votre disposition 7 jours sur 7.</p>
     <div class="cta-buttons">
       <a href="tel:+237243210931" class="btn btn-light">Appeler : +237 243 21 09 31</a>
-      <a href="https://wa.me/237699801830" target="_blank" rel="noopener" class="btn btn-light"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
-      <a href="mailto:hostelleriedelasanaga@ymail.com" class="btn btn-outline-light">Envoyer un e-mail</a>
+      <a href="https://wa.me/237692266713" target="_blank" rel="noopener" class="btn btn-light"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+      <a href="mailto:hostelleriedelasanaga@gmail.com" class="btn btn-outline-light">Envoyer un e-mail</a>
     </div>
   </div>
 </section>
@@ -315,9 +322,9 @@
       <h4>Contact</h4>
       <ul>
         <li><a href="tel:+237243210931">+237 243 21 09 31</a></li>
-        <li><a href="tel:+237699801830">+237 699 80 18 30</a></li>
-        <li><a href="mailto:hostelleriedelasanaga@ymail.com">hostelleriedelasanaga@ymail.com</a></li>
-        <li>Edéa, Cameroun</li>
+        <li><a href="tel:+237692266713">+237 692 26 67 13</a></li>
+        <li><a href="mailto:hostelleriedelasanaga@gmail.com">hostelleriedelasanaga@gmail.com</a></li>
+        <li>54 Edéa, Cameroun</li>
       </ul>
     </div>
 
@@ -326,7 +333,7 @@
             <div class="footer-social">
         <a href="https://www.facebook.com/hoteldelasanaga237" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
         <a href="https://www.instagram.com/hostelleriedelasanaga237/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-        <a href="https://wa.me/237699801830" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+        <a href="https://wa.me/237692266713" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
         <a href="https://www.tiktok.com/@hostelleriedelasanaga?lang=fr" target="_blank" rel="noopener" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
       </div>
     </div>
@@ -342,6 +349,6 @@
 <!-- Back to top button -->
 <button id="backToTop" aria-label="Retour en haut">↑</button>
 
-<script src="script.js?v=3"></script>
+<script src="script.js?v=9"></script>
 </body>
 </html>

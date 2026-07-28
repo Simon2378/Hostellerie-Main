@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+?<!DOCTYPE html>
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-<link rel="stylesheet" href="style.css?v=3">
+<link rel="stylesheet" href="style.css?v=9">
 </head>
 <body>
 
@@ -55,7 +55,10 @@
 <!-- ============ PAGE BANNER ============ -->
 <section class="page-banner">
   <div class="page-banner-media">
-    <img src="images/gallery-exterior-1.jpg" alt="Hostellerie de la Sanaga">
+    <img src="images/gallery-exterior-1.jpg" alt="Hostellerie de la Sanaga" class="page-banner-slide active">
+    <img src="images/hotel-aerial.jpg" alt="Vue aérienne de l'Hostellerie de la Sanaga" class="page-banner-slide">
+    <img src="images/luxe-special-cover.png" alt="Chambre Luxe Spéciale" class="page-banner-slide">
+    <img src="images/restaurant-dining.png" alt="Restaurant de l'Hostellerie de la Sanaga" class="page-banner-slide">
     <div class="hero-overlay"></div>
   </div>
   <div class="container page-banner-content">
@@ -75,19 +78,10 @@
       <h2 class="section-title">Nous sommes à votre disposition 7 jours sur 7 !</h2>
       <ul class="contact-info-list">
         <li><strong>Téléphone</strong><a href="tel:+237243210931">+237 243 21 09 31</a></li>
-        <li><strong>Mobile / WhatsApp</strong><a href="tel:+237699801830">+237 699 80 18 30</a></li>
-        <li><strong>Email</strong><a href="mailto:hostelleriedelasanaga@gmail.com">hostelleriedelasanaga@ymail.com</a></li>
-        <li><strong>Adresse</strong>Edéa, Cameroun</li>
+        <li><strong>Mobile / WhatsApp</strong><a href="tel:+237692266713">+237 692 26 67 13</a></li>
+        <li><strong>Email</strong><a href="mailto:hostelleriedelasanaga@gmail.com">hostelleriedelasanaga@gmail.com</a></li>
+        <li><strong>Adresse</strong>54 Edéa, Cameroun</li>
       </ul>
-
-      <div class="team-box">
-        <img src="images/logo-new.png" alt="Hostellerie de la Sanaga">
-        <div class="team-box-content">
-          <h3>Plus à l'aise pour discuter de vive voix ?</h3>
-          <p>Planifiez un appel de présentation de 15 minutes avec notre équipe, qui répondra à vos questions.<br>
-          <a href="#">Discuter maintenant</a></p>
-        </div>
-      </div>
     </div>
 
     <!-- Contact form column -->
@@ -99,11 +93,35 @@
         <input type="email" name="email" placeholder="Votre email" required>
         <input type="text" name="sujet" placeholder="Sujet" required>
         <textarea name="message" placeholder="Votre message (facultatif)"></textarea>
-        <p class="form-note">L'envoi ouvrira votre messagerie avec le message pré-rempli — il ne reste qu'à cliquer sur envoyer.</p>
+        <p class="form-note">Choisissez ensuite comment vous préférez nous contacter.</p>
         <button type="submit" class="btn btn-primary">Envoyer le message</button>
       </form>
     </div>
 
+  </div>
+
+  <!-- Contact method modal -->
+  <div class="contact-modal-overlay" id="contactModalOverlay">
+    <div class="contact-modal">
+      <button type="button" class="contact-modal-close" id="contactModalClose" aria-label="Fermer">&times;</button>
+
+      <div class="contact-modal-panel open" id="contactModalMain">
+        <h3>Comment souhaitez-vous nous contacter ?</h3>
+        <p>Votre message est prêt — choisissez une option ci-dessous.</p>
+        <a href="#" id="modalWhatsapp" class="contact-modal-btn whatsapp" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+        <button type="button" id="modalEmailToggle" class="contact-modal-btn email"><i class="fa-solid fa-envelope"></i> Email</button>
+        <a href="#" id="modalPhone" class="contact-modal-btn phone"><i class="fa-solid fa-phone"></i> Téléphone</a>
+      </div>
+
+      <div class="contact-modal-panel" id="contactModalEmailOptions">
+        <button type="button" class="contact-modal-back" id="modalEmailBack"><i class="fa-solid fa-arrow-left"></i> Retour</button>
+        <h3>Quelle application utilisez-vous ?</h3>
+        <p>Nous ne savons pas quelle messagerie vous utilisez, choisissez la vôtre.</p>
+        <a href="#" id="modalGmail" class="contact-modal-btn" target="_blank" rel="noopener">Gmail</a>
+        <a href="#" id="modalOutlook" class="contact-modal-btn" target="_blank" rel="noopener">Outlook</a>
+        <a href="#" id="modalOtherMail" class="contact-modal-btn">Autre (application par défaut)</a>
+      </div>
+    </div>
   </div>
 
   <!-- Map -->
@@ -141,9 +159,9 @@
       <h4>Contact</h4>
       <ul>
         <li><a href="tel:+237243210931">+237 243 21 09 31</a></li>
-        <li><a href="tel:+237699801830">+237 699 80 18 30</a></li>
-        <li><a href="mailto:hostelleriedelasanaga@ymail.com">hostelleriedelasanaga@ymail.com</a></li>
-        <li>Edéa, Cameroun</li>
+        <li><a href="tel:+237692266713">+237 692 26 67 13</a></li>
+        <li><a href="mailto:hostelleriedelasanaga@gmail.com">hostelleriedelasanaga@gmail.com</a></li>
+        <li>54 Edéa, Cameroun</li>
       </ul>
     </div>
 
@@ -152,7 +170,7 @@
             <div class="footer-social">
         <a href="https://www.facebook.com/hoteldelasanaga237" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
         <a href="https://www.instagram.com/hostelleriedelasanaga237/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-        <a href="https://wa.me/237699801830" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+        <a href="https://wa.me/237692266713" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
         <a href="https://www.tiktok.com/@hostelleriedelasanaga?lang=fr" target="_blank" rel="noopener" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
       </div>
     </div>
@@ -167,6 +185,6 @@
 
 <button id="backToTop" aria-label="Retour en haut">↑</button>
 
-<script src="script.js?v=3"></script>
+<script src="script.js?v=9"></script>
 </body>
 </html>

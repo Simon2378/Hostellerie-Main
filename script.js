@@ -61,26 +61,90 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // ---- Contact form (mailto handoff) ----
   var contactForm = document.getElementById('contactForm');
-  if (contactForm) {
+  var contactModal = document.getElementById('contactModalOverlay');
+
+  if (contactForm && contactModal) {
+    var modalMain = document.getElementById('contactModalMain');
+    var modalEmailOptions = document.getElementById('contactModalEmailOptions');
+    var modalEmailToggle = document.getElementById('modalEmailToggle');
+    var modalEmailBack = document.getElementById('modalEmailBack');
+    var modalClose = document.getElementById('contactModalClose');
+
+    function getFormValues() {
+      var fields = contactForm.querySelectorAll('input, textarea');
+      return {
+        name: fields[0] ? fields[0].value.trim() : '',
+        email: fields[1] ? fields[1].value.trim() : '',
+        subject: fields[2] ? fields[2].value.trim() : '',
+        message: fields[3] ? fields[3].value.trim() : ''
+      };
+    }
+
     contactForm.addEventListener('submit', function (e) {
       e.preventDefault();
       var isEn = document.documentElement.lang === 'en';
-      var fields = contactForm.querySelectorAll('input, textarea');
-      var name = fields[0] ? fields[0].value.trim() : '';
-      var email = fields[1] ? fields[1].value.trim() : '';
-      var subject = fields[2] ? fields[2].value.trim() : '';
-      var message = fields[3] ? fields[3].value.trim() : '';
-
-      var mailSubject = subject || (isEn ? 'Message from the website' : 'Message depuis le site web');
+      var v = getFormValues();
+      var subject = v.subject || (isEn ? 'Message from the website' : 'Message depuis le site web');
       var nameLabel = isEn ? 'Name' : 'Nom';
-      var mailBody = nameLabel + ': ' + name + '\nEmail: ' + email + '\n\n' + message;
+      var body = nameLabel + ': ' + v.name + '\nEmail: ' + v.email;
+      if (v.message) body += '\n\n' + v.message;
 
-      var mailtoLink = 'mailto:hostelleriedelasanaga@ymail.com'
-        + '?subject=' + encodeURIComponent(mailSubject)
-        + '&body=' + encodeURIComponent(mailBody);
+      var toAddress = 'hostelleriedelasanaga@gmail.com';
 
-      window.location.href = mailtoLink;
+      document.getElementById('modalWhatsapp').href =
+        'https://wa.me/237692266713?text=' + encodeURIComponent(body);
+      document.getElementById('modalPhone').href = 'tel:+237692266713';
+      document.getElementById('modalGmail').href =
+        'https://mail.google.com/mail/?view=cm&fs=1&to=' + toAddress + '&su=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+      document.getElementById('modalOutlook').href =
+        'https://outlook.live.com/mail/0/deeplink/compose?to=' + toAddress + '&subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+      document.getElementById('modalOtherMail').href =
+        'mailto:' + toAddress + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+
+      modalEmailOptions.classList.remove('open');
+      modalMain.classList.add('open');
+      contactModal.classList.add('open');
     });
+
+    modalEmailToggle.addEventListener('click', function () {
+      modalMain.classList.remove('open');
+      modalEmailOptions.classList.add('open');
+    });
+    modalEmailBack.addEventListener('click', function () {
+      modalEmailOptions.classList.remove('open');
+      modalMain.classList.add('open');
+    });
+    modalClose.addEventListener('click', function () { contactModal.classList.remove('open'); });
+    contactModal.addEventListener('click', function (e) { if (e.target === contactModal) contactModal.classList.remove('open'); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') contactModal.classList.remove('open'); });
+  }
+
+  // ---- Restaurant "Reserve a table" popup ----
+  var reserveTableBtn = document.getElementById('reserveTableBtn');
+  var reserveTableModal = document.getElementById('reserveTableModalOverlay');
+  if (reserveTableBtn && reserveTableModal) {
+    var reserveTableClose = document.getElementById('reserveTableModalClose');
+    reserveTableBtn.addEventListener('click', function (e) {
+      e.preventDefault();
+      reserveTableModal.classList.add('open');
+    });
+    reserveTableClose.addEventListener('click', function () { reserveTableModal.classList.remove('open'); });
+    reserveTableModal.addEventListener('click', function (e) { if (e.target === reserveTableModal) reserveTableModal.classList.remove('open'); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') reserveTableModal.classList.remove('open'); });
+  }
+
+  // ---- Seminars "Request a Quote" popup ----
+  var devisBtn = document.getElementById('devisBtn');
+  var devisModal = document.getElementById('devisModalOverlay');
+  if (devisBtn && devisModal) {
+    var devisClose = document.getElementById('devisModalClose');
+    devisBtn.addEventListener('click', function (e) {
+      e.preventDefault();
+      devisModal.classList.add('open');
+    });
+    devisClose.addEventListener('click', function () { devisModal.classList.remove('open'); });
+    devisModal.addEventListener('click', function (e) { if (e.target === devisModal) devisModal.classList.remove('open'); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') devisModal.classList.remove('open'); });
   }
 
   // ---- Scroll reveal animations (fade in from left/right/up) ----
@@ -161,8 +225,106 @@ document.addEventListener('DOMContentLoaded', function () {
 
   document.querySelectorAll('[data-gallery]').forEach(function (el) {
     var images = el.getAttribute('data-gallery').split(',').map(function (s) { return s.trim(); });
-    el.addEventListener('click', function () { openGallery(images, 0); });
+    el.addEventListener('click', function () {
+      var shownImg = el.querySelector('img.active') || el.querySelector('img');
+      var startIndex = 0;
+      if (shownImg) {
+        var shownSrc = shownImg.getAttribute('src').trim();
+        var found = images.findIndex(function (src) { return src === shownSrc || shownSrc.indexOf(src) !== -1 || src.indexOf(shownSrc) !== -1; });
+        if (found !== -1) startIndex = found;
+      }
+      openGallery(images, startIndex);
+    });
   });
+
+  // ---- Jump straight to a room's photos when arriving via #room-... link ----
+  if (window.location.hash) {
+    var targetRoom = document.querySelector(window.location.hash + '[data-gallery]');
+    if (targetRoom) {
+      setTimeout(function () {
+        targetRoom.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        var images = targetRoom.getAttribute('data-gallery').split(',').map(function (s) { return s.trim(); });
+        openGallery(images, 0);
+      }, 300);
+    }
+  }
+
+  // ---- Hero image carousel ----
+  var heroSlides = document.querySelectorAll('.hero-slide');
+  if (heroSlides.length > 1) {
+    var heroIndex = 0;
+    setInterval(function () {
+      heroSlides[heroIndex].classList.remove('active');
+      heroIndex = (heroIndex + 1) % heroSlides.length;
+      heroSlides[heroIndex].classList.add('active');
+    }, 5000);
+  }
+
+  // ---- Room page main photo carousel (auto-rotates, thumbnails stay put) ----
+  var roomHeroSlides = document.querySelectorAll('.room-hero-slide');
+  if (roomHeroSlides.length > 1) {
+    var roomHeroIndex = 0;
+    setInterval(function () {
+      roomHeroSlides[roomHeroIndex].classList.remove('active');
+      roomHeroIndex = (roomHeroIndex + 1) % roomHeroSlides.length;
+      roomHeroSlides[roomHeroIndex].classList.add('active');
+    }, 3000);
+  }
+
+  // ---- Sub-page banner photo carousel (nos-chambres.html etc.) ----
+  var bannerSlides = document.querySelectorAll('.page-banner-slide');
+  if (bannerSlides.length > 1) {
+    var bannerIndex = 0;
+    setInterval(function () {
+      bannerSlides[bannerIndex].classList.remove('active');
+      bannerIndex = (bannerIndex + 1) % bannerSlides.length;
+      bannerSlides[bannerIndex].classList.add('active');
+    }, 4000);
+  }
+
+  // ---- Room booking card: pre-fill dates into contact links ----
+  var roomBookingCard = document.querySelector('.room-booking-card');
+  if (roomBookingCard) {
+    var rIn = document.getElementById('roomCheckin');
+    var rOut = document.getElementById('roomCheckout');
+    var waLink = roomBookingCard.querySelector('.contact-whatsapp');
+    var emailLink = roomBookingCard.querySelector('.contact-email');
+    var callLink = roomBookingCard.querySelector('.contact-call');
+    var roomName = roomBookingCard.getAttribute('data-room-name') || '';
+    var isEn = document.documentElement.lang === 'en';
+
+    function formatDate(value) {
+      if (!value) return '';
+      var parts = value.split('-');
+      return parts.length === 3 ? parts[2] + '/' + parts[1] + '/' + parts[0] : value;
+    }
+
+    function updateContactLinks() {
+      var checkin = formatDate(rIn ? rIn.value : '');
+      var checkout = formatDate(rOut ? rOut.value : '');
+      var hasDates = checkin && checkout;
+
+      var waMsg = isEn
+        ? 'Hello, I would like to book the ' + roomName + '.'
+        : 'Bonjour, je souhaite réserver la ' + roomName + '.';
+      if (hasDates) {
+        waMsg += isEn
+          ? (' Check-in: ' + checkin + ', Check-out: ' + checkout + '.')
+          : (' Arrivée : ' + checkin + ', Départ : ' + checkout + '.');
+      }
+      if (waLink) waLink.href = 'https://wa.me/237692266713?text=' + encodeURIComponent(waMsg);
+
+      if (emailLink) {
+        var subject = (isEn ? 'Booking request - ' : 'Demande de réservation - ') + roomName;
+        var body = waMsg;
+        emailLink.href = 'mailto:hostelleriedelasanaga@ymail.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+      }
+    }
+
+    if (rIn) rIn.addEventListener('change', updateContactLinks);
+    if (rOut) rOut.addEventListener('change', updateContactLinks);
+    updateContactLinks();
+  }
 
   // ---- Sticky header shadow on scroll ----
   var header = document.getElementById('siteHeader');

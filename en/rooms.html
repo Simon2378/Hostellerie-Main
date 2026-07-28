@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+?<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-<link rel="stylesheet" href="../style.css?v=3">
+<link rel="stylesheet" href="../style.css?v=9">
 </head>
 <body>
 
@@ -54,7 +54,10 @@
 <!-- ============ PAGE BANNER ============ -->
 <section class="page-banner">
   <div class="page-banner-media">
-    <img src="../images/gallery-room-1.jpg" alt="Room at Hostellerie de la Sanaga">
+    <img src="../images/gallery-room-1.jpg" alt="Room at Hostellerie de la Sanaga" class="page-banner-slide active">
+    <img src="../images/suite-cover.jpg" alt="Junior Suite" class="page-banner-slide">
+    <img src="../images/luxe-special-cover.png" alt="Special Deluxe" class="page-banner-slide">
+    <img src="../images/luxe-cover.png" alt="Deluxe Room" class="page-banner-slide">
     <div class="hero-overlay"></div>
   </div>
   <div class="container page-banner-content">
@@ -64,90 +67,47 @@
   </div>
 </section>
 
-<!-- ============ ROOM DETAILS SECTION ============ -->
-<section class="room-detail">
+<!-- ============ ROOMS OVERVIEW SECTION ============ -->
+<section class="rooms" style="padding: 90px 0;">
   <div class="container">
-
-    <!-- Room: Junior Apartment -->
-    <div class="room-detail-item">
-      <div class="room-detail-media reveal-left" data-gallery="../images/suite-1.png,../images/suite-2.png,../images/suite-3.png,../images/suite-4.png">
-        <img src="../images/suite-cover.jpg" alt="Junior Suite">
-      </div>
-      <div class="room-detail-info reveal-right">
-        <p class="section-kicker">Suite Junior </p>
-        <h3>Junior Suite</h3>
-        <p class="room-size">With buffet breakfast</p>
-        <p class="room-price"><strong>67,000</strong> FCFA TTC / night, incl. breakfast</p>
-        <ul>
-          <li>Separate living area</li>
-          <li>Equipped kitchenette</li>
-          <li>Air conditioning &amp; wifi</li>
-          <li>Private bathroom</li>
-        </ul>
-        <a href="https://wa.me/237699801830?text=Hello%2C%20I%20would%20like%20to%20book%20the%20Junior%20Suite." class="btn btn-primary" target="_blank" rel="noopener">Book Now</a>
-      </div>
+    <div class="rooms-grid">
+      <article class="room-card">
+        <div class="room-image"><img src="../images/suite-cover.jpg" alt="Junior Suite"></div>
+        <div class="room-body">
+          <h3>Junior Suite</h3>
+          <p class="room-size">With buffet breakfast</p>
+          <p class="room-price"><strong>67,000</strong> FCFA TTC / night</p>
+          <a href="room-junior-suite.html" class="btn btn-outline">View Room</a>
+        </div>
+      </article>
+      <article class="room-card">
+        <div class="room-image"><img src="../images/luxe-special-cover.png" alt="Special Deluxe"></div>
+        <div class="room-body">
+          <h3>Special Deluxe</h3>
+          <p class="room-size">With buffet breakfast</p>
+          <p class="room-price"><strong>57,000</strong> FCFA TTC / night</p>
+          <a href="room-special-deluxe.html" class="btn btn-outline">View Room</a>
+        </div>
+      </article>
+      <article class="room-card">
+        <div class="room-image"><img src="../images/luxe-cover.png" alt="Deluxe Room"></div>
+        <div class="room-body">
+          <h3>Deluxe Room</h3>
+          <p class="room-size">With buffet breakfast</p>
+          <p class="room-price"><strong>42,000</strong> FCFA TTC / night</p>
+          <a href="room-deluxe.html" class="btn btn-outline">View Room</a>
+        </div>
+      </article>
+      <article class="room-card">
+        <div class="room-image"><img src="../images/standard-cover.png" alt="Standard Room"></div>
+        <div class="room-body">
+          <h3>Standard Room</h3>
+          <p class="room-size">Without breakfast</p>
+          <p class="room-price"><strong>29,000</strong> FCFA TTC / night</p>
+          <a href="room-standard.html" class="btn btn-outline">View Room</a>
+        </div>
+      </article>
     </div>
-
-    <!-- Room: Deluxe Room -->
-    <div class="room-detail-item">
-      <div class="room-detail-media reveal-right">
-        <img src="../images/gallery-room-2.jpg" alt="Deluxe Room">
-      </div>
-      <div class="room-detail-info reveal-left">
-        <p class="section-kicker">Room</p>
-        <h3>Deluxe Room</h3>
-        <p class="room-size">With buffet breakfast</p>
-        <p class="room-price"><strong>42,000</strong> FCFA TTC / night, incl. breakfast</p>
-        <ul>
-          <li>Comfortable double bed</li>
-          <li>Air conditioning &amp; wifi</li>
-          <li>Flat-screen TV</li>
-          <li>Private bathroom</li>
-        </ul>
-        <a href="https://wa.me/237699801830?text=Hello%2C%20I%20would%20like%20to%20book%20the%20Deluxe%20Room." class="btn btn-primary" target="_blank" rel="noopener">Book Now</a>
-      </div>
-    </div>
-
-    <!-- Room: Special Room -->
-    <div class="room-detail-item">
-      <div class="room-detail-media reveal-left">
-        <img src="../images/chambre-speciale.jpg" alt="Special Room">
-      </div>
-      <div class="room-detail-info reveal-right">
-        <p class="section-kicker">Room</p>
-        <h3>Special Deluxe</h3>
-        <p class="room-size">With buffet breakfast</p>
-        <p class="room-price"><strong>57,000</strong> FCFA TTC / night, incl. breakfast</p>
-        <ul>
-          <li>Work desk</li>
-          <li>Air conditioning &amp; wifi</li>
-          <li>Flat-screen TV</li>
-          <li>Private bathroom</li>
-        </ul>
-        <a href="https://wa.me/237699801830?text=Hello%2C%20I%20would%20like%20to%20book%20the%20Special%20Deluxe." class="btn btn-primary" target="_blank" rel="noopener">Book Now</a>
-      </div>
-    </div>
-
-    <!-- Room: Standard Room -->
-    <div class="room-detail-item">
-      <div class="room-detail-media reveal-right">
-        <img src="../images/gallery-room-3.jpg" alt="Standard Room">
-      </div>
-      <div class="room-detail-info reveal-left">
-        <p class="section-kicker">Room</p>
-        <h3>Standard Room</h3>
-        <p class="room-size">Without breakfast</p>
-        <p class="room-price"><strong>29,000</strong> FCFA TTC / night</p>
-        <ul>
-          <li>Double or twin bed</li>
-          <li>Air conditioning &amp; wifi</li>
-          <li>Flat-screen TV</li>
-          <li>Private bathroom</li>
-        </ul>
-        <a href="https://wa.me/237699801830?text=Hello%2C%20I%20would%20like%20to%20book%20the%20Standard%20Room." class="btn btn-primary" target="_blank" rel="noopener">Book Now</a>
-      </div>
-    </div>
-
   </div>
 </section>
 
@@ -175,9 +135,9 @@
       <h4>Contact</h4>
       <ul>
         <li><a href="tel:+237243210931">+237 243 21 09 31</a></li>
-        <li><a href="tel:+237699801830">+237 699 80 18 30</a></li>
-        <li><a href="mailto:hostelleriedelasanaga@ymail.com">hostelleriedelasanaga@ymail.com</a></li>
-        <li>Edea, Cameroon</li>
+        <li><a href="tel:+237692266713">+237 692 26 67 13</a></li>
+        <li><a href="mailto:hostelleriedelasanaga@gmail.com">hostelleriedelasanaga@gmail.com</a></li>
+        <li>54 Edea, Cameroon</li>
       </ul>
     </div>
 
@@ -186,7 +146,7 @@
             <div class="footer-social">
         <a href="https://www.facebook.com/hoteldelasanaga237" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
         <a href="https://www.instagram.com/hostelleriedelasanaga237/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-        <a href="https://wa.me/237699801830" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+        <a href="https://wa.me/237692266713" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
         <a href="https://www.tiktok.com/@hostelleriedelasanaga?lang=fr" target="_blank" rel="noopener" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
       </div>
     </div>
@@ -201,6 +161,6 @@
 
 <button id="backToTop" aria-label="Back to top">↑</button>
 
-<script src="../script.js?v=3"></script>
+<script src="../script.js?v=9"></script>
 </body>
 </html>

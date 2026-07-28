@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+?<!DOCTYPE html>
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-<link rel="stylesheet" href="style.css?v=3">
+<link rel="stylesheet" href="style.css?v=9">
 </head>
 <body>
 
@@ -81,7 +81,7 @@
         <li>Service petit-déjeuner, déjeuner et dîner</li>
         <li>Cadre convivial et climatisé</li>
       </ul>
-      <a href="contact.html" class="btn btn-primary">Réserver une table</a>
+      <a href="#" id="reserveTableBtn" class="btn btn-primary">Réserver une table</a>
     </div>
     <div class="feature-media reveal-right">
       <img src="images/restaurant-dining.png" alt="Restaurant de l'Hostellerie de la Sanaga">
@@ -137,9 +137,9 @@
       <h4>Contact</h4>
       <ul>
         <li><a href="tel:+237243210931">+237 243 21 09 31</a></li>
-        <li><a href="tel:+237699801830">+237 699 80 18 30</a></li>
-        <li><a href="mailto:hostelleriedelasanaga@ymail.com">hostelleriedelasanaga@ymail.com</a></li>
-        <li>Edéa, Cameroun</li>
+        <li><a href="tel:+237692266713">+237 692 26 67 13</a></li>
+        <li><a href="mailto:hostelleriedelasanaga@gmail.com">hostelleriedelasanaga@gmail.com</a></li>
+        <li>54 Edéa, Cameroun</li>
       </ul>
     </div>
 
@@ -148,7 +148,7 @@
             <div class="footer-social">
         <a href="https://www.facebook.com/hoteldelasanaga237" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
         <a href="https://www.instagram.com/hostelleriedelasanaga237/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-        <a href="https://wa.me/237699801830" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+        <a href="https://wa.me/237692266713" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
         <a href="https://www.tiktok.com/@hostelleriedelasanaga?lang=fr" target="_blank" rel="noopener" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
       </div>
     </div>
@@ -161,8 +161,21 @@
   </div>
 </footer>
 
+<!-- ============ TABLE RESERVATION POPUP ============ -->
+<div class="contact-modal-overlay" id="reserveTableModalOverlay">
+  <div class="contact-modal reserve-table-modal">
+    <button type="button" class="contact-modal-close" id="reserveTableModalClose" aria-label="Fermer">&times;</button>
+    <div class="reserve-table-box">
+      <img src="images/logo-new.png" alt="Hostellerie de la Sanaga">
+      <h3>Réservez votre table</h3>
+      <p>Notre équipe se fera un plaisir de vous accueillir au restaurant. Contactez-nous pour réserver votre table et découvrir notre carte.</p>
+      <a href="https://hostelleriesanaga.com" target="_blank" rel="noopener">Voir le menu</a>
+    </div>
+  </div>
+</div>
+
 <button id="backToTop" aria-label="Retour en haut">↑</button>
 
-<script src="script.js?v=3"></script>
+<script src="script.js?v=9"></script>
 </body>
 </html>
