@@ -127,6 +127,7 @@ ul { list-style: none; }
 .logo span { font-size: 15px; letter-spacing: 1px; color: var(--color-dark); }
 .logo em { display: block; font-style: normal; font-size: 12px; color: var(--color-primary); font-weight: 600; }
 
+.main-nav-brand { display: none; }
 .main-nav ul { display: flex; gap: 30px; }
 .main-nav a {
   font-size: 14px;
@@ -731,10 +732,24 @@ ul { list-style: none; }
     background: var(--color-white);
     box-shadow: -4px 0 20px rgba(0,0,0,0.1);
     transition: right 0.3s ease;
-    padding: 100px 30px;
+    padding: 40px 30px;
     z-index: 30;
+    overflow-y: auto;
   }
   .main-nav.open { right: 0; }
+  .main-nav-brand {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    text-align: center;
+    padding-bottom: 30px;
+    margin-bottom: 30px;
+    border-bottom: 1px solid var(--color-light-gray);
+  }
+  .main-nav-brand img { height: 60px; width: auto; }
+  .main-nav-brand span { font-size: 14px; font-weight: 700; letter-spacing: 1px; color: var(--color-dark); }
+  .main-nav-brand em { display: block; font-style: normal; font-size: 12px; color: var(--color-primary); font-weight: 600; margin-top: 2px; }
   .main-nav ul { flex-direction: column; gap: 22px; }
   .menu-toggle { display: flex; grid-column: 1; justify-self: start; margin-left: 0; }
   .lang-switcher { grid-column: 3; justify-self: end; margin-left: 0; }
