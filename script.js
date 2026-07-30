@@ -7,16 +7,29 @@ document.addEventListener('DOMContentLoaded', function () {
   // ---- Mobile menu toggle ----
   var menuToggle = document.getElementById('menuToggle');
   var mainNav = document.getElementById('mainNav');
+  var navBackdrop = document.getElementById('navBackdrop');
   if (menuToggle && mainNav) {
+    function openMobileNav() {
+      mainNav.classList.add('open');
+      menuToggle.classList.add('open');
+      if (navBackdrop) navBackdrop.classList.add('open');
+      document.body.classList.add('nav-open');
+    }
+    function closeMobileNav() {
+      mainNav.classList.remove('open');
+      menuToggle.classList.remove('open');
+      if (navBackdrop) navBackdrop.classList.remove('open');
+      document.body.classList.remove('nav-open');
+    }
+
     menuToggle.addEventListener('click', function () {
-      mainNav.classList.toggle('open');
-      menuToggle.classList.toggle('open');
+      if (mainNav.classList.contains('open')) { closeMobileNav(); } else { openMobileNav(); }
     });
 
+    if (navBackdrop) navBackdrop.addEventListener('click', closeMobileNav);
+
     mainNav.querySelectorAll('a').forEach(function (link) {
-      link.addEventListener('click', function () {
-        mainNav.classList.remove('open');
-      });
+      link.addEventListener('click', closeMobileNav);
     });
   }
 
