@@ -295,11 +295,12 @@ document.addEventListener('DOMContentLoaded', function () {
     }, 4000);
   }
 
-  // ---- Room booking card: pre-fill dates into contact links ----
+  // ---- Room booking card: pre-fill name + dates into contact links ----
   var roomBookingCard = document.querySelector('.room-booking-card');
   if (roomBookingCard) {
     var rIn = document.getElementById('roomCheckin');
     var rOut = document.getElementById('roomCheckout');
+    var gName = document.getElementById('guestName');
     var waLink = roomBookingCard.querySelector('.contact-whatsapp');
     var emailLink = roomBookingCard.querySelector('.contact-email');
     var callLink = roomBookingCard.querySelector('.contact-call');
@@ -316,10 +317,18 @@ document.addEventListener('DOMContentLoaded', function () {
       var checkin = formatDate(rIn ? rIn.value : '');
       var checkout = formatDate(rOut ? rOut.value : '');
       var hasDates = checkin && checkout;
+      var guestName = gName ? gName.value.trim() : '';
 
-      var waMsg = isEn
-        ? 'Hello, I would like to book the ' + roomName + '.'
-        : 'Bonjour, je souhaite réserver la ' + roomName + '.';
+      var waMsg;
+      if (guestName) {
+        waMsg = isEn
+          ? ('Hello, my name is ' + guestName + '. I would like to book the ' + roomName + '.')
+          : ("Bonjour, je m'appelle " + guestName + '. Je souhaite réserver la ' + roomName + '.');
+      } else {
+        waMsg = isEn
+          ? ('Hello, I would like to book the ' + roomName + '.')
+          : ('Bonjour, je souhaite réserver la ' + roomName + '.');
+      }
       if (hasDates) {
         waMsg += isEn
           ? (' Check-in: ' + checkin + ', Check-out: ' + checkout + '.')
@@ -330,12 +339,13 @@ document.addEventListener('DOMContentLoaded', function () {
       if (emailLink) {
         var subject = (isEn ? 'Booking request - ' : 'Demande de réservation - ') + roomName;
         var body = waMsg;
-        emailLink.href = 'mailto:hostelleriedelasanaga@ymail.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+        emailLink.href = 'mailto:hostelleriedelasanaga@gmail.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
       }
     }
 
     if (rIn) rIn.addEventListener('change', updateContactLinks);
     if (rOut) rOut.addEventListener('change', updateContactLinks);
+    if (gName) gName.addEventListener('input', updateContactLinks);
     updateContactLinks();
   }
 

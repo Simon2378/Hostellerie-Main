@@ -620,6 +620,12 @@ ul { list-style: none; }
   top: 100px;
 }
 .room-booking-card h3 { font-size: 18px; margin-bottom: 18px; }
+.room-booking-name { margin-bottom: 18px; }
+.room-booking-name label { font-size: 11px; font-weight: 700; color: var(--color-gray); text-transform: uppercase; display: block; margin-bottom: 6px; }
+.room-booking-name input {
+  width: 100%; padding: 10px 12px; border: 1px solid var(--color-light-gray);
+  border-radius: 6px; font-family: var(--font-main); color: var(--color-dark);
+}
 .room-booking-dates { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 18px; }
 .room-booking-dates label { font-size: 11px; font-weight: 700; color: var(--color-gray); text-transform: uppercase; display: block; margin-bottom: 6px; }
 .room-booking-dates input {

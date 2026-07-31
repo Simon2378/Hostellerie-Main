@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-<link rel="stylesheet" href="style.css?v=11">
+<link rel="stylesheet" href="style.css?v=12">
 </head>
 <body>
 
@@ -117,6 +117,10 @@
     <!-- ============ BOOKING CARD ============ -->
     <div class="room-booking-card" data-room-name="Suite Junior">
       <h3>Vérifier la disponibilité</h3>
+      <div class="room-booking-name">
+        <label for="guestName">Votre nom</label>
+        <input type="text" id="guestName" placeholder="Ex : Ange">
+      </div>
       <div class="room-booking-dates">
         <div>
           <label for="roomCheckin">Arrivée</label>
@@ -127,12 +131,12 @@
           <input type="date" id="roomCheckout">
         </div>
       </div>
+      <h5>Choisissez vos dates pour les inclure automatiquement dans votre message.<h5>
       <div class="room-contact-options">
         <a href="#" class="contact-whatsapp" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> Réserver par WhatsApp</a>
         <a href="tel:+237692266713" class="contact-call"><i class="fa-solid fa-phone"></i> Appeler pour réserver</a>
         <a href="#" class="contact-email"><i class="fa-solid fa-envelope"></i> Réserver par email</a>
       </div>
-      <p class="room-booking-note">Choisissez vos dates pour les inclure automatiquement dans votre message.</p>
     </div>
   </div>
 </div>
@@ -216,6 +220,6 @@
 </footer>
 
 <button id="backToTop" aria-label="Retour en haut">↑</button>
-<script src="script.js?v=11"></script>
+<script src="script.js?v=12"></script>
 </body>
 </html>
